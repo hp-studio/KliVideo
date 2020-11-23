@@ -2,7 +2,7 @@
 
 module.exports = {
     parser: '@typescript-eslint/parser',
-    extends: ['prettier/@typescript-eslint', 'plugin:prettier/recommended'],
+    extends: ['plugin:react/recommended', 'prettier/@typescript-eslint', 'plugin:prettier/recommended'],
     settings: {
         react: {
             pragma: 'React',
