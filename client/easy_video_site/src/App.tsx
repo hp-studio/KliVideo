@@ -1,16 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import {RouterContainer} from './components';
+import {ReduxContainer, RouterContainer} from './components';
 
 /**
  * 渲染根组件
  */
 const App: React.FC = () => {
-    const renderRouterContainer: () => JSX.Element = () => {
+    /**
+     * 渲染路由容器
+     */
+    const renderRouterContainer = (): JSX.Element => {
         return <RouterContainer />;
     };
-    return <div>{renderRouterContainer()}</div>;
+    /**
+     * 渲染Redux容器
+     */
+    const renderReduxContainer = (): JSX.Element => {
+        return <ReduxContainer>{renderRouterContainer()}</ReduxContainer>;
+    };
+    return <div className={'app'}>{renderReduxContainer()}</div>;
 };
 
 export default App;
