@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import {Route, HashRouter, Switch} from 'react-router-dom';
+import {useSelector} from 'react-redux';
+import {IRootState} from '../../types/';
 import * as pages from '../../pages';
 interface IRoute {
     path: string;
@@ -29,6 +31,7 @@ export const RouterContainer: React.FC = props => {
             component: pages.Login,
         },
     ]);
+
     /**
      * 渲染路由列表
      * @param {IRoutesList} routesList  路由数组

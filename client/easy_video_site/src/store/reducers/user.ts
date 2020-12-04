@@ -1,7 +1,6 @@
-import {IAction} from '../../types';
-type TUserState = {};
+import {IAction, IUserState} from '../../types';
 const userState = {};
-export default (state = userState, action: IAction): TUserState => {
+export default (state = userState, action: IAction): IUserState => {
     switch (action.type) {
         default:
             return state;
