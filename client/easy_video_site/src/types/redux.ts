@@ -3,9 +3,12 @@ export interface IAction<T = any> {
     payload?: T;
 }
 export interface IUserState {}
-export interface ISettingState {
+export interface IRuntimeState {
     title: string;
     subTitle: string;
+}
+export interface ISettingState {
+    title: string;
 }
 export interface IRootState {
     user: IUserState;

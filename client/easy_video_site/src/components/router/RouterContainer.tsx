@@ -16,7 +16,7 @@ type IRoutesList = IRoute[];
  * 渲染路由容器
  * @param props 传递参数
  */
-export const RouterContainer: React.FC = props => {
+const RouterContainer: React.FC = props => {
     /**
      * 设置路由列表
      */
@@ -49,3 +49,4 @@ export const RouterContainer: React.FC = props => {
         </HashRouter>
     );
 };
+export default RouterContainer;

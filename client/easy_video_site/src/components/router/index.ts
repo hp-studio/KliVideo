@@ -1,1 +1,1 @@
-export * from './RouterContainer';
+export {default as RouterContainer} from './RouterContainer';
