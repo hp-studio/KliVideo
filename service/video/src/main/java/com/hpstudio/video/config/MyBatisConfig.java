@@ -45,10 +45,10 @@ public class MyBatisConfig {
     @Bean
     public DataSource dataSource() {
         HikariDataSource hikariDataSource = new HikariDataSource();
-        hikariDataSource.setJdbcUrl("jdbc:mysql://111.229.155.159:3306/videoWebSite");
+        hikariDataSource.setJdbcUrl("jdbc:mysql://localhost:3306/videoWebSite");
         hikariDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        hikariDataSource.setUsername("wjj");
-        hikariDataSource.setPassword("wjj1234");
+        hikariDataSource.setUsername("xxx");
+        hikariDataSource.setPassword("xxxx");
         return hikariDataSource;
     }
 }
