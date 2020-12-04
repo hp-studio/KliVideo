@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: consumer
+  cloud:
+    nacos:
+#      config:
+#        server-addr: wsl2:8848
+      discovery:
+        server-addr: wsl2:8848
+
+dubbo:
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: spring-cloud://localhost
+  cloud:
+    subscribed-services: video,user
+  consumer:
+    timeout: 10000
+
+server:
+  port: 9000
+
+logging:
+  level:
+    com.hpstudio.consumer: debug

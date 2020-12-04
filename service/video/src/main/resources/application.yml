@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: video
+  cloud:
+    nacos:
+      config:
+        server-addr: wsl2:8848
+      discovery:
+        server-addr: wsl2:8848
+
+dubbo:
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: spring-cloud://localhost
+
+server:
+  port: 9002
+
