@@ -4,6 +4,7 @@ import {changeSubtitle} from '../../store/actions';
 import {RouterContainer} from '../../router';
 
 import {Header} from './header';
+import {Copyright} from './copyright';
 
 export const Home: React.FC = props => {
     const dispatch = useDispatch();
@@ -14,10 +15,8 @@ export const Home: React.FC = props => {
     return (
         <div>
             <Header />
-            <a href='#/login'>回到login</a>
-            <a href='#/a'>a</a>
-            <a href='#/b'>b</a>
             <RouterContainer page='home' />
+            <Copyright />
         </div>
     );
 };
