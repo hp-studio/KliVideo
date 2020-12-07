@@ -1,1 +1,4 @@
-export {default as Home} from './Home';
+export * from './Home';
+export * from './a';
+export * from './b';
+export * from './header';

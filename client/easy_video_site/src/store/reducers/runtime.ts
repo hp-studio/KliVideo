@@ -6,26 +6,30 @@ import * as actions from '../actions/';
 const settingState: IRuntimeState = {
     title: '测试视频网站',
     subTitle: '',
+    separator: '-',
 };
 
 /**
  * 修改浏览器标题.
- * @param title 标题内容.
+ * @param state IRuntimeState 当前最新state.
  */
-const changeTitles = (title: string): void => {
-    document.title = title;
+const changeTitles = (state: IRuntimeState): void => {
+    document.title = `${state.title}${state.subTitle && state.separator + state.subTitle}`;
 };
 
-export default (state = settingState, action: IAction): IRuntimeState => {
+export const runtimeReducer = (state = settingState, action: IAction): IRuntimeState => {
+    let newState: IRuntimeState;
     switch (action.type) {
         case actions.CHANGE_TITLE:
             const title = action.payload;
-            changeTitles(title + state.subTitle);
-            return {...state, title};
+            newState = {...state, title};
+            changeTitles(newState);
+            return newState;
         case actions.CHANGE_SUB_TITLE:
             const subTitle = action.payload;
-            changeTitles(state.title + subTitle);
-            return {...state, subTitle: action.payload};
+            newState = {...state, subTitle: action.payload};
+            changeTitles(newState);
+            return newState;
         default:
             return state;
     }

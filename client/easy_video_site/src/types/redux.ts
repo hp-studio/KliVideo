@@ -6,9 +6,10 @@ export interface IUserState {}
 export interface IRuntimeState {
     title: string;
     subTitle: string;
+    separator: string;
 }
 export interface ISettingState {
-    title: string;
+    defaultTitle: string;
 }
 export interface IRootState {
     user: IUserState;

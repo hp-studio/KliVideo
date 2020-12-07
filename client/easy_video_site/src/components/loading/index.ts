@@ -1,1 +1,1 @@
-export {default as LoadingBox} from './LoadingBox';
+export * from './LoadingBox';

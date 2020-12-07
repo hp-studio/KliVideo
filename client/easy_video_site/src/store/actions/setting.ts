@@ -14,7 +14,7 @@ export const setSetting = async (dispatch: Dispatch): Promise<IAction | boolean>
         /**尝试请求默认设置 */
         const resData: ISettingState = await getSetting();
         /**设置默认标题 */
-        changeTitle(dispatch, resData.title);
+        changeTitle(dispatch, resData.defaultTitle);
         const action = {
             type: CHANGE_SETTING,
             payload: resData,

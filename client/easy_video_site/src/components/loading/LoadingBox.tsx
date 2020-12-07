@@ -16,7 +16,7 @@ interface IProps {
  * type:类型.
  * size:大小.
  */
-const LoadingBox: React.FC<IProps> = (props: IProps) => {
+export const LoadingBox: React.FC<IProps> = (props: IProps) => {
     const {type, size, tip} = props;
     const antIcon = <LoadingOutlined style={{fontSize: size}} spin />;
     const renderSpin = () => {
@@ -31,5 +31,3 @@ const LoadingBox: React.FC<IProps> = (props: IProps) => {
             return null;
     }
 };
-
-export default LoadingBox;

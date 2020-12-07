@@ -4,10 +4,10 @@ import * as actions from '../actions/';
  * 管理系统设置的reducer
  */
 const settingState: ISettingState = {
-    title: '',
+    defaultTitle: '',
 };
 
-export default (state = settingState, action: IAction): ISettingState => {
+export const settingReducer = (state = settingState, action: IAction): ISettingState => {
     switch (action.type) {
         case actions.CHANGE_SETTING:
             const setting = action.payload;

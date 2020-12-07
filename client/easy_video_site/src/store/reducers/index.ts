@@ -1,3 +1,3 @@
-export {default as user} from './user';
-export {default as runtime} from './runtime';
-export {default as setting} from './setting';
+export * from './user';
+export * from './runtime';
+export * from './setting';
