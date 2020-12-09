@@ -3,7 +3,11 @@
     align-items: center;
     background-color: #36cfc9;
     color: #fff;
+
     .logo {
+        font-family: Futura;
+        text-align: center;
+        padding: 1rem;
     }
     .navigator {
         flex: 1;
@@ -16,9 +20,13 @@
             list-style: none;
             cursor: pointer;
             color: #fff;
+            transition: background 0.3s ease-in-out;
         }
         .navigatorItem:hover {
-            background-color: #08979c;
+            background: #08979c;
         }
+    }
+    .other {
+        padding: 1rem;
     }
 }

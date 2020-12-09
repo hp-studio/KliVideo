@@ -7,7 +7,7 @@ import './Header.scss';
 export const Header: React.FC = props => {
     return (
         <div className='header'>
-            <div className='logo'>logo</div>
+            <div className='logo'>haliVideo</div>
             <ul className='navigator'>
                 <Link to='/'>
                     <li className='navigatorItem'>首页</li>
