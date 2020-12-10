@@ -3,7 +3,7 @@ import {VideoPlayer} from '../../../components';
 
 export const A = () => {
     return (
-        <div className='content'>
+        <div className='content' style={{padding: '1rem'}}>
             <VideoPlayer />
         </div>
     );

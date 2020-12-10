@@ -7,10 +7,11 @@
     .logo {
         font-family: Futura;
         text-align: center;
-        padding: 1rem;
+        padding: 0 1rem;
     }
     .navigator {
         flex: 1;
+        height: 100%;
         display: flex;
         margin: 0;
         .navigatorItem {
@@ -27,6 +28,6 @@
         }
     }
     .other {
-        padding: 1rem;
+        padding: 0 1rem;
     }
 }

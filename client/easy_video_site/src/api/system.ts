@@ -9,7 +9,7 @@ export const getSetting = (): Promise<ISettingState> => {
         setTimeout(() => {
             const resData = {defaultTitle: 'hilivideo'};
             resolve(resData);
-        }, 3000);
+        }, 500);
         // reject();
     });
 };

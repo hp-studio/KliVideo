@@ -11,7 +11,7 @@ export const settingReducer = (state = settingState, action: IAction): ISettingS
     switch (action.type) {
         case actions.CHANGE_SETTING:
             const setting = action.payload;
-            return Object.assign(state, setting);
+            return {...state, ...setting};
         default:
             return state;
     }

@@ -2,6 +2,8 @@ import React, {useEffect} from 'react';
 import './Login.scss';
 import {useDispatch} from 'react-redux';
 import {changeSubtitle} from '../../store/actions';
+import {Link} from 'react-router-dom';
+import {Button} from 'antd';
 
 export const Login: React.FC = props => {
     const dispatch = useDispatch();
@@ -11,7 +13,9 @@ export const Login: React.FC = props => {
     return (
         <div className='login'>
             login
-            <a href='#/'>登入</a>
+            <Link to='/'>
+                <Button>登入</Button>
+            </Link>
         </div>
     );
 };

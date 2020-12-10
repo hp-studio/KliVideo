@@ -1,8 +1,5 @@
 import React, {useEffect, useRef} from 'react';
-//引入依赖
-import 'video.js/dist/video-js.css';
-import 'videojs-flash';
-import videojs from 'video.js';
+import DPlayer from 'dplayer';
 
 interface IPlayerOptions {
     autoplay?: boolean;
@@ -11,26 +8,55 @@ interface IPlayerOptions {
 
 interface IVideoPlayerProps {
     overwritePlayerOptions?: IPlayerOptions;
+    style?: React.CSSProperties | undefined;
 }
 
+/**
+ * 播放器组件
+ * @param props 传递参数
+ */
 export const VideoPlayer = (props: IVideoPlayerProps) => {
-    const {overwritePlayerOptions} = props;
-    const videoSrc = 'https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4';
     const playerRef = useRef(null);
-    const defaultPlayerOptions = {autoplay: true, muted: true};
+    const {overwritePlayerOptions, style} = props;
+    const playerOptions = {
+        container: playerRef.current,
+        video: {
+            url: 'https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4',
+            defaultQuality: 1,
+            quality: [
+                {
+                    name: '720P',
+                    url: 'https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_sd.mp4',
+                    type: 'mp4',
+                },
+                {
+                    name: '1080P',
+                    url: 'https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4',
+                    type: 'mp4',
+                },
+            ],
+        },
+        autoplay: true,
+        theme: '#36cfc9',
+        danmaku: {
+            id: 'test',
+            api: 'https://api.prprpr.me/dplayer/',
+        },
+    };
+    /**
+     * 初始化播放器
+     * @param playerOptions
+     */
+    const initPlayer = (playerOptions: any) => {
+        return new DPlayer(playerOptions);
+    };
     useEffect(() => {
-        const player = videojs(playerRef.current, overwritePlayerOptions || defaultPlayerOptions, () => {
-            player.src(videoSrc);
-        });
+        const dp = initPlayer(playerOptions);
 
         return () => {
-            player.dispose();
+            dp.destroy();
         };
     }, []);
 
-    return (
-        <div data-vjs-player>
-            <video ref={playerRef} className='video-js vjs-16-9' playsInline />
-        </div>
-    );
+    return <div ref={playerRef}></div>;
 };
