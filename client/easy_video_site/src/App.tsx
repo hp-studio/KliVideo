@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 
-import './App.css';
+import './App.less';
 import {RouterContainer} from './router';
 import {LoadingBox} from './components';
 import {setSetting} from './store/actions';

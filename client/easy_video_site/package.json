@@ -3,6 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "@craco/craco": "^6.0.0",
         "@testing-library/jest-dom": "^5.11.4",
         "@testing-library/react": "^11.1.0",
         "@testing-library/user-event": "^12.1.10",
@@ -17,6 +18,7 @@
         "@typescript-eslint/eslint-plugin": "^4.8.1",
         "@typescript-eslint/parser": "^4.8.1",
         "antd": "^4.9.1",
+        "craco-less": "^1.17.1",
         "dplayer": "^1.26.0",
         "eslint-config-airbnb": "^18.2.1",
         "eslint-config-alloy": "^3.8.2",
@@ -39,10 +41,9 @@
         "web-vitals": "^0.2.4"
     },
     "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "start": "craco start",
+        "build": "craco build",
+        "test": "craco test"
     },
     "eslintConfig": {
         "extends": [

@@ -1,13 +1,7 @@
 import React, {useEffect, useRef} from 'react';
-import DPlayer from 'dplayer';
-
-interface IPlayerOptions {
-    autoplay?: boolean;
-    muted?: boolean;
-}
+import DPlayer, {DPlayerOptions} from 'dplayer';
 
 interface IVideoPlayerProps {
-    overwritePlayerOptions?: IPlayerOptions;
     style?: React.CSSProperties | undefined;
 }
 
@@ -15,43 +9,42 @@ interface IVideoPlayerProps {
  * 播放器组件
  * @param props 传递参数
  */
-export const VideoPlayer = (props: IVideoPlayerProps) => {
+export const VideoPlayer: React.FC<IVideoPlayerProps> = (props: IVideoPlayerProps) => {
     const playerRef = useRef(null);
-    const {overwritePlayerOptions, style} = props;
-    const playerOptions = {
-        container: playerRef.current,
-        video: {
-            url: 'https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4',
-            defaultQuality: 1,
-            quality: [
-                {
-                    name: '720P',
-                    url: 'https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_sd.mp4',
-                    type: 'mp4',
-                },
-                {
-                    name: '1080P',
-                    url: 'https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4',
-                    type: 'mp4',
-                },
-            ],
-        },
-        autoplay: true,
-        theme: '#36cfc9',
-        danmaku: {
-            id: 'test',
-            api: 'https://api.prprpr.me/dplayer/',
-        },
-    };
+
     /**
      * 初始化播放器
-     * @param playerOptions
      */
-    const initPlayer = (playerOptions: any) => {
+    const initPlayer = (): DPlayer => {
+        const playerOptions: DPlayerOptions = {
+            container: playerRef.current,
+            video: {
+                defaultQuality: 1,
+                url: 'https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4',
+                quality: [
+                    {
+                        name: '720P',
+                        url: 'https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_sd.mp4',
+                        type: 'mp4',
+                    },
+                    {
+                        name: '1080P',
+                        url: 'https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4',
+                        type: 'mp4',
+                    },
+                ],
+            },
+            autoplay: true,
+            theme: '#36cfc9',
+            // danmaku: {
+            //     id: 'test',
+            //     api: 'https://api.prprpr.me/dplayer/',
+            // },
+        };
         return new DPlayer(playerOptions);
     };
     useEffect(() => {
-        const dp = initPlayer(playerOptions);
+        const dp: DPlayer = initPlayer();
 
         return () => {
             dp.destroy();
