@@ -3,20 +3,21 @@ import './Login.scss';
 import {useDispatch} from 'react-redux';
 import {changeSubtitle} from '../../store/actions';
 import {useHistory} from 'react-router-dom';
-import {Button, Checkbox, Form, Input} from 'antd';
+import {Button, Checkbox, Divider, Form, Input, Space} from 'antd';
+import {QqOutlined, WechatOutlined, WeiboOutlined, YoutubeOutlined, TwitterOutlined} from '@ant-design/icons';
 
 /**
- * 渲染登陆页
+ * 渲染登录页
  */
 export const Login: React.FC = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     useEffect(() => {
-        changeSubtitle(dispatch, '登陆');
+        changeSubtitle(dispatch, '登录');
     }, []);
 
     /**
-     * 渲染登陆表单
+     * 渲染登录表单
      */
     const renderLoginForm = () => {
         const initialValues = {username: '', password: '', remember: true};
@@ -25,6 +26,55 @@ export const Login: React.FC = () => {
             history.push({
                 pathname: '/',
             });
+        };
+        /**
+         * 渲染其他登录途径
+         */
+        const renderOtherWays = () => {
+            return (
+                <div className='loginForm-otherWays'>
+                    <a
+                        href='https://www.qq.com'
+                        className='loginForm-otherWays-icon'
+                        target='_blank'
+                        title='QQ'
+                        rel='nofollow noopener noreferrer'>
+                        <QqOutlined />
+                    </a>
+                    <a
+                        href='https://www.qq.com'
+                        className='loginForm-otherWays-icon'
+                        target='_blank'
+                        title='微信'
+                        rel='nofollow noopener noreferrer'>
+                        <WechatOutlined />
+                    </a>
+                    <a
+                        href='https://www.qq.com'
+                        className='loginForm-otherWays-icon'
+                        target='_blank'
+                        title='微博'
+                        rel='nofollow noopener noreferrer'>
+                        <WeiboOutlined />
+                    </a>
+                    <a
+                        href='https://www.qq.com'
+                        className='loginForm-otherWays-icon'
+                        target='_blank'
+                        title='Youtube'
+                        rel='nofollow noopener noreferrer'>
+                        <YoutubeOutlined />
+                    </a>
+                    <a
+                        href='https://www.qq.com'
+                        className='loginForm-otherWays-icon'
+                        target='_blank'
+                        title='Twitter'
+                        rel='nofollow noopener noreferrer'>
+                        <TwitterOutlined />
+                    </a>
+                </div>
+            );
         };
         return (
             <Form
@@ -48,9 +98,17 @@ export const Login: React.FC = () => {
                 </Form.Item>
 
                 <Form.Item>
-                    <Button type='primary' block htmlType='submit'>
-                        登入
-                    </Button>
+                    <Space direction='vertical' style={{width: '100%'}}>
+                        <Button type='primary' block htmlType='submit'>
+                            登录
+                        </Button>
+                        <Button block htmlType='submit'>
+                            注册
+                        </Button>
+                    </Space>
+
+                    <Divider />
+                    {renderOtherWays()}
                 </Form.Item>
             </Form>
         );

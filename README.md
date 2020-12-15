@@ -1,2 +1,3 @@
-# OpenSourceVideoWebSite
-an Open Source Video Web Site
+# an Easy VideoSite : KLi Video!	
+
+Incloude Client an Server code.
