@@ -43,17 +43,19 @@ export const Header: React.FC = () => {
         );
         if (userInfo) {
             return (
-                <Popover placement='bottomRight' content={userInfoMenu} title='ABC' trigger='click'>
-                    <div>
+                <Popover placement='bottomRight' content={userInfoMenu} title='ABC'>
+                    <div style={{cursor: 'pointer'}}>
                         <Avatar src='https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png' />
                     </div>
                 </Popover>
             );
         }
         return (
-            <Link to='/login' title='请登录'>
-                <Avatar icon={<UserOutlined />} />
-            </Link>
+            <div>
+                <Link to='/login' title='请登录'>
+                    <Avatar icon={<UserOutlined />} />
+                </Link>
+            </div>
         );
     };
     return (
