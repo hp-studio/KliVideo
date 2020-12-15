@@ -23,13 +23,38 @@ export const getRoutes = (page?: string): any[] => {
     if (page === 'home') {
         return [
             {
-                path: '/a',
-                component: pages['A'],
+                path: '/',
+                component: pages['HomeIndex'],
                 exact: true,
             },
             {
-                path: '/b',
-                component: pages['B'],
+                path: '/movie',
+                component: pages['Movie'],
+                exact: true,
+            },
+            {
+                path: '/teleplay',
+                component: pages['Teleplay'],
+                exact: true,
+            },
+            {
+                path: '/live',
+                component: pages['Live'],
+                exact: true,
+            },
+            {
+                path: '/anime',
+                component: pages['Anime'],
+                exact: true,
+            },
+            {
+                path: '/show',
+                component: pages['Show'],
+                exact: true,
+            },
+            {
+                path: '/list',
+                component: pages['List'],
                 exact: true,
             },
         ];

@@ -1,6 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useDispatch} from 'react-redux';
+import {VideoPlayer} from '../../../components';
+import {changeSubtitle} from '../../../store/actions';
+export const Teleplay = () => {
+    const dispatch = useDispatch();
 
-export const B = () => {
+    useEffect(() => {
+        changeSubtitle(dispatch, '电视剧');
+    }, []);
     return (
         <div className='content'>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto hic sequi unde et quos aspernatur quaerat

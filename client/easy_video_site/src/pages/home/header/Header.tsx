@@ -65,16 +65,24 @@ export const Header: React.FC = () => {
                 <Link to='/'>
                     <li className='navigatorItem'>首页</li>
                 </Link>
-                <Link to='/a'>
+                <Link to='/movie'>
                     <li className='navigatorItem'>电影</li>
                 </Link>
-                <Link to='/b'>
+                <Link to='/teleplay'>
                     <li className='navigatorItem'>电视剧</li>
                 </Link>
-                <li className='navigatorItem'>直播</li>
-                <li className='navigatorItem'>动漫</li>
-                <li className='navigatorItem'>综艺</li>
-                <li className='navigatorItem'>番表</li>
+                <Link to='/live'>
+                    <li className='navigatorItem'>直播</li>
+                </Link>
+                <Link to='/anime'>
+                    <li className='navigatorItem'>动漫</li>
+                </Link>
+                <Link to='/show'>
+                    <li className='navigatorItem'>综艺</li>
+                </Link>
+                <Link to='/list'>
+                    <li className='navigatorItem'>番表</li>
+                </Link>
             </ul>
             <div className='other'>
                 {renderSearch()}
