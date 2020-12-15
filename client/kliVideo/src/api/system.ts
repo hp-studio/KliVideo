@@ -7,7 +7,7 @@ import * as pages from '../pages';
 export const getSetting = (): Promise<ISettingState> => {
     return new Promise<ISettingState>((resolve, reject) => {
         setTimeout(() => {
-            const resData = {defaultTitle: 'hilivideo'};
+            const resData = {defaultTitle: 'Klivideo'};
             resolve(resData);
         }, 500);
         // reject();

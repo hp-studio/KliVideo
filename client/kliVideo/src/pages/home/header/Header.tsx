@@ -60,7 +60,7 @@ export const Header: React.FC = () => {
     };
     return (
         <div className='header'>
-            <div className='logo'>haliVideo</div>
+            <div className='logo'>KliVideo</div>
             <ul className='navigator'>
                 <Link to='/'>
                     <li className='navigatorItem'>首页</li>

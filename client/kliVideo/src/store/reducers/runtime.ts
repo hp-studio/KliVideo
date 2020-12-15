@@ -4,7 +4,7 @@ import * as actions from '../actions/';
  * 管理系统运行状态的reducer
  */
 const settingState: IRuntimeState = {
-    title: '测试视频网站',
+    title: '加载中',
     subTitle: '',
     separator: '-',
 };
