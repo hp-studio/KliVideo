@@ -66,6 +66,11 @@ export const getRoutes = (page?: string): any[] => {
                 exact: true,
             },
             {
+                path: '/register',
+                component: pages['Register'],
+                exact: true,
+            },
+            {
                 path: '/',
                 component: pages['Home'],
             },

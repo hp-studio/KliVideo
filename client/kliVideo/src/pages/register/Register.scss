@@ -1,28 +1,28 @@
-.login {
+.register {
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    .loginForm {
+    .registerForm {
         width: 300px;
         border: 1px solid #ccc;
         padding: 1rem;
         border-radius: 1rem;
         animation: flyFromBottom 1s;
-        .loginForm-title {
+        .registerForm-title {
             font-family: Futura;
             text-align: center;
             padding: 1rem;
         }
-        .loginForm-otherWays {
+        .registerForm-otherWays {
             display: flex;
             justify-content: space-around;
             align-items: center;
             height: 2rem;
         }
-        .loginForm-otherWays-icon {
+        .registerForm-otherWays-icon {
             flex: 1;
             font-size: 1.3rem;
             transition: font-size 0.1s ease-in-out;
@@ -30,7 +30,7 @@
             color: #000;
             text-align: center;
         }
-        .loginForm-otherWays-icon:hover {
+        .registerForm-otherWays-icon:hover {
             font-size: 2rem;
             color: #36cfc9;
         }

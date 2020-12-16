@@ -1,15 +1,5 @@
-@keyframes flyIn {
-    from {
-        opacity: 0;
-        margin-top: 10rem;
-    }
-    to {
-        opacity: 1;
-        margin-top: 0;
-    }
-}
 .home {
     .content {
-        animation: flyIn 1s;
+        animation: flyFromBottom 1s;
     }
 }

@@ -1,15 +1,12 @@
 import React, {useEffect} from 'react';
-import './Login.scss';
+import './Register.scss';
 import {useDispatch} from 'react-redux';
 import {changeSubtitle} from '../../store/actions';
 import {Link, useHistory} from 'react-router-dom';
 import {Button, Checkbox, Divider, Form, Input, Space} from 'antd';
 import {QqOutlined, WechatOutlined, WeiboOutlined, YoutubeOutlined, TwitterOutlined} from '@ant-design/icons';
 
-/**
- * 渲染登录页
- */
-export const Login: React.FC = () => {
+export const Register: React.FC = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     useEffect(() => {
@@ -19,12 +16,11 @@ export const Login: React.FC = () => {
     /**
      * 渲染登录表单
      */
-    const renderLoginForm = () => {
-        const initialValues = {username: '', password: '', remember: true};
-        const onLogin = () => {
-            localStorage.setItem('userInfo', 'true');
+    const renderregisterForm = () => {
+        const initialValues = {username: '', phone: '', password: '', passwordCheck: '', email: ''};
+        const onRegister = () => {
             history.push({
-                pathname: '/',
+                pathname: '/login',
             });
         };
         /**
@@ -32,10 +28,10 @@ export const Login: React.FC = () => {
          */
         const renderOtherWays = () => {
             return (
-                <div className='loginForm-otherWays'>
+                <div className='registerForm-otherWays'>
                     <a
                         href='https://www.qq.com'
-                        className='loginForm-otherWays-icon'
+                        className='registerForm-otherWays-icon'
                         target='_blank'
                         title='QQ'
                         rel='nofollow noopener noreferrer'>
@@ -43,7 +39,7 @@ export const Login: React.FC = () => {
                     </a>
                     <a
                         href='https://www.qq.com'
-                        className='loginForm-otherWays-icon'
+                        className='registerForm-otherWays-icon'
                         target='_blank'
                         title='微信'
                         rel='nofollow noopener noreferrer'>
@@ -51,7 +47,7 @@ export const Login: React.FC = () => {
                     </a>
                     <a
                         href='https://www.qq.com'
-                        className='loginForm-otherWays-icon'
+                        className='registerForm-otherWays-icon'
                         target='_blank'
                         title='微博'
                         rel='nofollow noopener noreferrer'>
@@ -59,7 +55,7 @@ export const Login: React.FC = () => {
                     </a>
                     <a
                         href='https://www.qq.com'
-                        className='loginForm-otherWays-icon'
+                        className='registerForm-otherWays-icon'
                         target='_blank'
                         title='Youtube'
                         rel='nofollow noopener noreferrer'>
@@ -67,7 +63,7 @@ export const Login: React.FC = () => {
                     </a>
                     <a
                         href='https://www.qq.com'
-                        className='loginForm-otherWays-icon'
+                        className='registerForm-otherWays-icon'
                         target='_blank'
                         title='Twitter'
                         rel='nofollow noopener noreferrer'>
@@ -79,31 +75,35 @@ export const Login: React.FC = () => {
         return (
             <Form
                 colon={false}
-                labelCol={{span: 4}}
+                labelCol={{span: 6}}
                 labelAlign='left'
-                name='loginForm'
+                name='registerForm'
                 initialValues={initialValues}
-                onFinish={onLogin}>
-                <div className='loginForm-title'>KliVideo</div>
+                onFinish={onRegister}>
+                <div className='registerForm-title'>注册KliVideo</div>
                 <Form.Item label='用户名' name='username'>
                     <Input bordered={false} placeholder='请输入用户名' />
+                </Form.Item>
+                <Form.Item label='手机号' name='phone'>
+                    <Input bordered={false} placeholder='请输入手机号' />
                 </Form.Item>
 
                 <Form.Item label='密码' name='password'>
                     <Input.Password bordered={false} placeholder='请输入密码' />
                 </Form.Item>
-
-                <Form.Item name='remember' valuePropName='checked'>
-                    <Checkbox>记住我</Checkbox>
+                <Form.Item label='确认密码' name='passwordCheck'>
+                    <Input.Password bordered={false} placeholder='请再次输入密码' />
                 </Form.Item>
-
+                <Form.Item label='电子邮箱' name='email'>
+                    <Input bordered={false} placeholder='请再次输入电子邮箱' />
+                </Form.Item>
                 <Form.Item>
                     <Space direction='vertical' style={{width: '100%'}}>
                         <Button type='primary' block htmlType='submit'>
-                            登录
+                            注册
                         </Button>
                         <Button block>
-                            <Link to='/register'>注册</Link>
+                            <Link to='/login'>返回</Link>
                         </Button>
                     </Space>
 
@@ -114,8 +114,8 @@ export const Login: React.FC = () => {
         );
     };
     return (
-        <div className='login'>
-            <div className='loginForm'>{renderLoginForm()}</div>
+        <div className='register'>
+            <div className='registerForm'>{renderregisterForm()}</div>
         </div>
     );
 };
